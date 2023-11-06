@@ -1,0 +1,25 @@
+DNA sequence of  Source species:
+ TAGAGCGCTCTATAACAA
+-------------------------- >>
+mRNA sequence of source species:
+ AUCUCGCGAGAUAUUGUU
+-------------------------- >>
+Amino acid sequence of  Source species:
+ ISRDIV
+-------------------------- >>
+Motif Calculation
+==========================
+Matching start at index: 4
+Sub_amino=DI, Head_Amino=R, Tail_Amino=V
+Set of Potential Occurence:
+I==> AUU
+S==> AGU
+R==> CGU CGC CGA CGG AGA AGG
+D==> GAU
+I==> AUA
+V==> GUU GUC GUA GUG
+==========================
+Optimized mRNA Sequence of Target species:
+AUUAGUCGUGAUAUAGUU
+Optimized DNA codon sequence of Target species:
+TAATCAGCACTATATCAA

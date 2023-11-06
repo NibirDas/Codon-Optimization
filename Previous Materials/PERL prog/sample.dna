@@ -1,0 +1,31 @@
+> sample dna  (This is a typical fasta header.)
+> Fasta-style headers can go on for multiple lines.
+> Fasta headers must have a less-than sign at the
+> very beginning of the line.
+# We're also going to ignore
+# comments beginning with '#', and blank lines.
+
+# Although they're not permitted in fasta files,
+# we just want to show how it's done.
+agatggcggcgctgaggggtcttgggggctctaggccggccacctactgg
+tttgcagcggagacgacgcatggggcctgcgcaataggagtacgctgcct
+gggaggcgtgactagaagcggaagtagttgtgggcgcctttgcaaccgcc
+tgggacgccgccgagtggtctgtgcaggttcgcgggtcgctggcgggggt
+cgtgagggagtgcgccgggagcggagatatggagggagatggttcagacc
+cagagcctccagatgccggggaggacagcaagtccgagaatggggagaat
+gcgcccatctactgcatctgccgcaaaccggacatcaactgcttcatgat
+cgggtgtgacaactgcaatgagtggttccatggggactgcatccggatca
+ctgagaagatggccaaggccatccgggagtggtactgtcgggagtgcaga
+gagaaagaccccaagctagagattcgctatcggcacaagaagtcacggga
+gcgggatggcaatgagcgggacagcagtgagccccgggatgagggtggag
+ggcgcaagaggcctgtccctgatccagacctgcagcgccgggcagggtca
+gggacaggggttggggccatgcttgctcggggctctgcttcgccccacaa
+atcctctccgcagcccttggtggccacacccagccagcatcaccagcagc
+agcagcagcagatcaaacggtcagcccgcatgtgtggtgagtgtgaggca
+tgtcggcgcactgaggactgtggtcactgtgatttctgtcgggacatgaa
+gaagttcgggggccccaacaagatccggcagaagtgccggctgcgccagt
+gccagctgcgggcccgggaatcgtacaagtacttcccttcctcgctctca
+ccagtgacgccctcagagtccctgccaaggccccgccggccactgcccac
+ccaacagcagccacagccatcacagaagttagggcgcatccgtgaagatg
+agggggcagtggcgtcatcaacagtcaaggagcctcctgaggctacagcc
+acacctgagccactctcagatgaggaccta
