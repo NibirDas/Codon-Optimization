@@ -1,0 +1,38 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    
+    background-color: black;
+    text-align: center;
+}
+
+.choose{
+    margin: 5%;
+    font-size: 2rem;
+    color: rgb(249, 218, 159);
+}
+.choose select{
+    background: transparent;
+    color: rgb(243, 177, 91);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.dna{
+    color: aliceblue;
+    margin: 5%;
+    font-size: 2rem;
+}
+.dna label{
+    color: aliceblue;
+    font-size: 1.5rem;
+    background: transparent;
+    text-decoration: none;
+}
+.res{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+
+/* Add more styles as needed */
