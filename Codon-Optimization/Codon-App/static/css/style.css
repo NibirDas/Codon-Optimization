@@ -1,38 +1,53 @@
-/* style.css */
-body {
-    font-family: Arial, sans-serif;
-    
-    background-color: black;
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
     text-align: center;
+    background-color: black;
 }
+.whole{
+    background-color: salmon;
+    width: 40%;
+    height: 80%;
+    border: 2rem solid salmon;
+    border-radius: 1rem;
+    margin: 2rem;
 
+}
 .choose{
-    margin: 5%;
-    font-size: 2rem;
-    color: rgb(249, 218, 159);
+    font-size: 1.5rem;
 }
 .choose select{
-    background: transparent;
-    color: rgb(243, 177, 91);
-    font-size: 1.5rem;
-    text-decoration: none;
+    background-color: salmon;
+    border-radius: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    
 }
 .dna{
-    color: aliceblue;
-    margin: 5%;
-    font-size: 2rem;
+    background-color: salmon;
+    font-size: 1.5rem;    
 }
-.dna label{
-    color: aliceblue;
-    font-size: 1.5rem;
-    background: transparent;
-    text-decoration: none;
+.dna input{
+    background-color: whitesmoke;
+    border-radius: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    
 }
-.res{
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+.dna button{
+    margin-top: 20px;
+    background-color: red;
+    border-radius: 2rem;
+    font-size: 1rem;
+    text-align: center;
 }
-
-
-/* Add more styles as needed */
+.target{
+    font-size: 1.1rem;
+    text-align: center;
+}
+#particle-js{
+    z-index: -1;
+}

@@ -5,42 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <title>Codon Optimization</title>
 </head>
 <body>
-    
-    <form method="post" action="{{ url_for('index') }}">
-        <div class="choose">
-            <h1>CODON OPTIMIZATION</h1>
-            <label for="organism">Choose Organism:</label>
-            <select id="organism" name="organism" required>
-                <option value="custom">Custom</option>
-                <option value="human">Human</option>
-                <option value="pentus">Lactobacillus Pentosus</option>
-                <option value="mushroom">Common Mushroom</option>
-                <option value="gorilla">Gorilla</option>
-                <!-- Add more options as needed -->
-            </select>
-        </div>
-        <div class="dna">
-            <label for="sequence">Enter DNA Sequence:</label>
+    <div class="whole">
+        <form method="post" action="{{ url_for('index') }}">
             
-            <input type="text" id="sequence" name="sequence" required>
-            <button type="submit">Optimize</button>
+            <h1 class="heading">CODON OPTIMIZATION</h1>
+            <div class="choose">
+                <label for="organism">Choose Organism:</label>
+                <select id="organism" name="organism" required>
+                    <option value="custom">Custom</option>
+                    <option value="human">Human</option>
+                    <option value="pentus">Lactobacillus Pentosus</option>
+                    <option value="mushroom">Common Mushroom</option>
+                    <option value="gorilla">Gorilla</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <div class="dna">
+                <br>
+                <label for="sequence">Enter DNA Sequence:</label>
+                
+                <input type="text" id="sequence" name="sequence" required>
+                <br>     
+                <button type="submit">Optimize</button>           
+            </div>
             
+            <br>
+            <div class="target">
+                <label for="target_cai">Target CAI:</label>
+                <input type="range" id="target_cai" name="target_cai" min="0" max="100" value="{{ optimized_cai }}*100" disabled>
+                <output for="target_cai" id="target_cai_value">{{ default_target_cai[0] }} - {{ default_target_cai[1] }}</output>
+            </div>
+            
+        </form>
+        
+        <div class="res">
+            {% if optimized_sequence %}
+                <h2>Optimized Sequence:</h2>
+                <p>{{ optimized_sequence }}</p>
+                <h2>Optimized CAI:</h2>
+                <p>{{ optimized_cai }}</p>
+            {% endif %}
         </div>
-    </form>
-    
-    <div class="res">
-        <label for="target_cai">Target CAI:</label>
-        <input type="range" id="target_cai" name="target_cai" min="0" max="100" value="50" disabled>
-        <output for="target_cai" id="target_cai_value">{{ default_target_cai[0] }} - {{ default_target_cai[1] }}</output>
-        {% if optimized_sequence %}
-            <h2>Optimized Sequence:</h2>
-            <p>{{ optimized_sequence }}</p>
-            <h2>Optimized CAI:</h2>
-            <p>{{ optimized_cai }}</p>
-        {% endif %}
     </div>
 </body>
 </html>
