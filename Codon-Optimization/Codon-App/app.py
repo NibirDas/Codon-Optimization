@@ -37,7 +37,8 @@ organism_data = {
 	'target_cai': 0.9,
 	'default_cai_range': (0.8, 1.0)
     },
-    'Lactobacillus pentosus': {
+    'pentus': {
+        #Lactobasillus Pentosus
 	'codon_usage': {
         'UUU':12.4, 'UCU':6.2, 'UAU':14.6, 'UGU':0.7,
         'UUC':22.9, 'UCC':5.1, 'UAC':23.3, 'UGC':0.4,
@@ -61,7 +62,67 @@ organism_data = {
 	
 	'target_cai': 0.6,
 	'default_cai_range': (0.5, 0.7)
+
+    },
+    'mushroom': {
+        #Agaricus bisporus
+	'codon_usage': {
+        'UUU':14.0, 'UCU':17.8, 'UAU':13.0, 'UGU':6.8,
+        'UUC':27.4, 'UCC':14.3, 'UAC':16.1, 'UGC':9.3,
+        'UUA': 4.4, 'UCA':9.8, 'UAA':1.1, 'UGA':1.0,
+        'UUG':15.2, 'UCG':10.5, 'UAG':0.8, 'UGG':14.8,
+
+        'CUU':19.8, 'CCU': 19.3, 'CAU':12.1, 'CGU':11.2,
+        'CUC':26.6, 'CCC':16.5, 'CAC':11.1, 'CGC':9.2,
+        'CUA':5.8, 'CCA':9.0, 'CAA':20.5, 'CGA':6.3,
+        'CUG':9.5, 'CCG':8.0, 'CAG':14.5, 'CGG':4.0,
+
+        'AUU':22.9, 'ACU':21.0, 'AAU':21.3, 'AGU':10.3,
+        'AUC':28.4, 'ACC':21.7, 'AAC':28.1, 'AGC':11.2,
+        'AUA':5.6, 'ACA':11.5, 'AAA':21.0, 'AGA':5.1,
+        'AUG':18.4, 'ACG':9.2, 'AAG':26.9, 'AGG':6.9,
+
+        'GUU':23.6, 'GCU':32.2, 'GAU':30.5, 'GGU':32.4,
+        'GUC':31.0, 'GCC':25.7, 'GAC':25.0, 'GGC':26.4,
+        'GUA':7.3, 'GCA':16.8, 'GAA':26.5, 'GGA':21.5,
+        'GUG':9.7, 'GCG':11.6, 'GAG':22.7, 'GGG':8.1},
+	
+	'target_cai': 0.6,
+	'default_cai_range': (0.5, 0.7)
+
+    },
+    'gorilla': {
+        #Agaricus bisporus
+	'codon_usage': {
+        'UUU':17.5, 'UCU':16.2, 'UAU':14.0, 'UGU':11.2,
+        'UUC':23.9, 'UCC':17.0,  'UAC':17.0, 'UGC':13.5,
+        'UUA':7.6, 'UCA':11.2,  'UAA':0.9,  'UGA':1.8,
+        'UUG':13.2, 'UCG':3.4,  'UAG':0.7,  'UGG':15.6,
+
+
+        'CUU': 13.2, 'CCU':15.8, 'CAU':11.9, 'CGU':4.8,
+        'CUC':22.3,  'CCC':18.8, 'CAC':16.2, 'CGC':10.9,
+        'CUA': 7.8,  'CCA':14.4, 'CAA':14.5, 'CGA': 5.7,
+        'CUG':43.2,  'CCG': 6.5, 'CAG':37.5, 'CGG': 9.7,
+
+
+        'AUU':16.9,  'ACU':13.5, 'AAU':16.1, 'AGU':10.6,
+        'AUC':22.9,  'ACC':20.8, 'AAC':18.7, 'AGC':17.5,
+        'AUA': 8.9,  'ACA':15.3, 'AAA':23.6, 'AGA':14.9,
+        'AUG':22.9,  'ACG': 5.8, 'AAG':29.3, 'AGG':12.9,
+
+
+        'GUU':12.1,  'GCU':18.9, 'GAU':16.6, 'GGU': 9.4,
+        'GUC':15.2,  'GCC':26.8, 'GAC':22.2, 'GGC':19.4,
+        'GUA': 6.9,  'GCA':14.7, 'GAA':22.9, 'GGA':15.2,
+        'GUG':29.1,  'GCG': 7.6, 'GAG':36.9, 'GGG':17.4,},
+	
+	'target_cai': 0.5,
+	'default_cai_range': (0.4, 0.6)
+
     }
+
+    
 }
 
 def calculate_cai(sequence, codon_usage):
@@ -110,6 +171,7 @@ def optimize_codon_sequence(target_cai, current_sequence, codon_usage, max_itera
 def index():
     optimized_sequence = None
     optimized_cai = None
+    default_cai_range = (0, 1)
 
     if request.method == 'POST':
         sequence = request.form['sequence']
@@ -118,9 +180,8 @@ def index():
         # Get organism data from the dictionary
         organism_info = organism_data.get(organism, {})
         codon_usage = organism_info.get('codon_usage', {})
-        target_cai = organism_info.get('target_cai', 0.9)
+        target_cai = organism_info.get('target_cai', 0.0)
         default_cai_range=organism_info.get('default_cai_range',(0,1))
-
         optimized_sequence = optimize_codon_sequence(target_cai, sequence, codon_usage)
         optimized_cai = calculate_cai(optimized_sequence, codon_usage)
 
