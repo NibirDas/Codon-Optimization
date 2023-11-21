@@ -92,25 +92,22 @@ organism_data = {
 
     },
     'gorilla': {
-        #Agaricus bisporus
+        #Gorilla Gorilla
 	'codon_usage': {
         'UUU':17.5, 'UCU':16.2, 'UAU':14.0, 'UGU':11.2,
         'UUC':23.9, 'UCC':17.0,  'UAC':17.0, 'UGC':13.5,
         'UUA':7.6, 'UCA':11.2,  'UAA':0.9,  'UGA':1.8,
         'UUG':13.2, 'UCG':3.4,  'UAG':0.7,  'UGG':15.6,
 
-
         'CUU': 13.2, 'CCU':15.8, 'CAU':11.9, 'CGU':4.8,
         'CUC':22.3,  'CCC':18.8, 'CAC':16.2, 'CGC':10.9,
         'CUA': 7.8,  'CCA':14.4, 'CAA':14.5, 'CGA': 5.7,
         'CUG':43.2,  'CCG': 6.5, 'CAG':37.5, 'CGG': 9.7,
 
-
         'AUU':16.9,  'ACU':13.5, 'AAU':16.1, 'AGU':10.6,
         'AUC':22.9,  'ACC':20.8, 'AAC':18.7, 'AGC':17.5,
         'AUA': 8.9,  'ACA':15.3, 'AAA':23.6, 'AGA':14.9,
         'AUG':22.9,  'ACG': 5.8, 'AAG':29.3, 'AGG':12.9,
-
 
         'GUU':12.1,  'GCU':18.9, 'GAU':16.6, 'GGU': 9.4,
         'GUC':15.2,  'GCC':26.8, 'GAC':22.2, 'GGC':19.4,
@@ -120,9 +117,7 @@ organism_data = {
 	'target_cai': 0.5,
 	'default_cai_range': (0.4, 0.6)
 
-    }
-
-    
+    }    
 }
 
 def calculate_cai(sequence, codon_usage):
@@ -130,8 +125,7 @@ def calculate_cai(sequence, codon_usage):
     total_codons = 0
     for i in range(0, len(sequence), 3):
         codon = sequence[i:i + 3] # CGT - 
-        codon_counts[codon] = codon_counts.get(codon, 0) + 1
-        
+        codon_counts[codon] = codon_counts.get(codon, 0) + 1   
         total_codons += 1
 
     #print (codon_counts)
