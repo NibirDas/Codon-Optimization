@@ -120,38 +120,44 @@ organism_data = {
     }    
 }
 
+# Function to calculate the Codon Adaptation Index (CAI) for a given sequence and codon usage
 def calculate_cai(sequence, codon_usage):
     codon_counts = {} 
     total_codons = 0
+	# Counting occurrences of each codon in the sequence
     for i in range(0, len(sequence), 3):
         codon = sequence[i:i + 3] # CGT - 
         codon_counts[codon] = codon_counts.get(codon, 0) + 1   
         total_codons += 1
 
-    #print (codon_counts)
     cai = 1.0
 
+	# Calculating CAI based on the product of codon frequencies
     for codon, count in codon_counts.items():
         if codon in codon_usage:
             cai *= (codon_usage[codon] ** count)
-
+	# Taking the geometric mean to get the final CAI
     cai = cai ** (1 / total_codons)
     return cai
 
+# Function to optimize a given sequence to match the target CAI using random mutations
 def optimize_codon_sequence(target_cai, current_sequence, codon_usage, max_iterations=1000, mutation_rate=0.1):
     current_cai = calculate_cai(current_sequence, codon_usage)
     best_sequence = current_sequence
     best_cai = current_cai
 
     for _ in range(max_iterations):
+	    # Randomly selecting a position to mutate
         position_to_mutate = random.randint(0, len(current_sequence) - 3)
         new_sequence = list(current_sequence)
+	    # Randomly choosing a new codon to replace the existing one
         new_codon = random.choice(list(codon_usage.keys()))
         new_sequence[position_to_mutate:position_to_mutate+3] = list(new_codon)
         new_sequence = ''.join(new_sequence)
         
         new_cai = calculate_cai(new_sequence, codon_usage)
 
+	     # Updating the best sequence if the new CAI is closer to the target CAI
         if abs(new_cai - target_cai) < abs(best_cai - target_cai):
             best_sequence = new_sequence
             best_cai = new_cai
