@@ -152,12 +152,17 @@ organism_data = {
 
     
 }
+def is_valid_dna(sequence):
+    valid_nucleotides = set("ATCG")
+
+    # Check if all characters in the sequence are valid nucleotides
+    return all(char in valid_nucleotides for char in sequence)
 
 def calculate_cai(sequence, codon_usage):
     codon_counts = {} 
     total_codons = 0
     for i in range(0, len(sequence), 3):
-        codon = sequence[i:i + 3] # CGT - 
+        codon = sequence[i:i + 3] 
         codon_counts[codon] = codon_counts.get(codon, 0) + 1
         
         total_codons += 1
@@ -226,17 +231,22 @@ def index():
 
     if request.method == 'POST':
         sequence = request.form['sequence']
+        sequence = sequence.strip()
+        sequence = ''.join(sequence.split())
         organism = request.form['organism']
 
-        # Get organism data from the dictionary
-        organism_info = organism_data.get(organism, {})
-        codon_usage = organism_info.get('codon_usage', {})
-        target_cai = organism_info.get('target_cai', 0.0)
-        default_cai_range=organism_info.get('default_cai_range',(0,1))
-        optimized_sequence = optimize_codon_sequence(target_cai, sequence, codon_usage)
-        optimized_cai = calculate_cai(optimized_sequence, codon_usage)
+        if is_valid_dna(sequence):
+            # Get organism data from the dictionary
+            organism_info = organism_data.get(organism, {})
+            codon_usage = organism_info.get('codon_usage', {})
+            target_cai = organism_info.get('target_cai', 0.0)
+            default_cai_range=organism_info.get('default_cai_range',(0,1))
+            optimized_sequence = optimize_codon_sequence(target_cai, sequence, codon_usage)
+            optimized_cai = calculate_cai(optimized_sequence, codon_usage)
+        else:
+            optimized_sequence = "Not a Proper Sequence"
+            optimized_cai = "Error"
 
     return render_template('index.html', optimized_sequence=optimized_sequence, optimized_cai=optimized_cai, default_target_cai=default_cai_range)
-
 if __name__ == '__main__':
     app.run(debug=True)
