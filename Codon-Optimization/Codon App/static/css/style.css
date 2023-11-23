@@ -79,6 +79,7 @@ body{
     box-sizing: border-box;
     color: #000;
     background: #f5f0f0;
+    text-align: center;
     border: none;
     outline: none;
     border-radius: 30px;
