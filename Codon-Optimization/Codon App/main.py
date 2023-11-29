@@ -250,3 +250,4 @@ def index():
     return render_template('index.html', optimized_sequence=optimized_sequence, optimized_cai=optimized_cai, default_target_cai=default_cai_range)
 if __name__ == '__main__':
     app.run(debug=True)
+

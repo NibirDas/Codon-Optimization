@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-----<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- GOOGKE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100&display=swap" rel="stylesheet">
+    <!--     googke fonts   -->
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/card.css">
+
+
+    <title>CrossCAI</title>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div id="preloader">
+        <img src="preloader.gif" alt="Preloader">
+    </div>
+    <nav class="navbar">
+        <a href="index.html""><i class='bx bxs-home'></i></a>
+        <a href="contact.html""><i class='bx bxs-contact'></i></a>
+    </nav>
+    <section class="container">
+        <div class="card__container swiper">
+            <div class="card__content">
+                <div class="swiper-wrapper">
+                    <article class="card__article swiper-slide">
+                    <div class="card__image">
+                        <img src="assets/img/avatar-1.png" alt="image" class="card__img">
+                        <div class="card__shadow"></div>
+                    </div>
+                    <div class="card__data">
+                        <h3 class="card__name">Human</h3>
+                        <p class="card__description">
+                            Homo Sapiens <br> 0.8 - 1.0
+                        </p>
+                    </div>
+                </article>
+                <article class="card__article swiper-slide">
+                    <div class="card__image">
+                        <img src="assets/img/avatar-4.png" alt="image" class="card__img">
+                        <div class="card__shadow"></div>
+                    </div>      
+                    <div class="card__data">
+                        <h3 class="card__name">Wolf</h3>
+                        <p class="card__description">
+                            Homo Sapiens <br> 0.8 - 1.0
+                        </p>
+                    </div>
+                </article>      
+                <article class="card__article swiper-slide">
+                    <div class="card__image">
+                        <img src="assets/img/avatar-3.png" alt="image" class="card__img">
+                        <div class="card__shadow"></div>
+                    </div>
+                    <div class="card__data">
+                        <h3 class="card__name">Cow</h3>
+                        <p class="card__description">
+                            Homo Sapiens <br> 0.8 - 1.0
+                        </p>
+                    </div>
+                </article>
+                <article class="card__article swiper-slide">
+                    <div class="card__image">
+                        <img src="assets/img/avatar-4.png" alt="image" class="card__img">
+                        <div class="card__shadow"></div>
+                    </div>
+                    <div class="card__data">
+                        <h3 class="card__name">Gorilla</h3>
+                        <p class="card__description">
+                            Homo Sapiens <br> 0.8 - 1.0
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card__article swiper-slide">
+                    <div class="card__image">
+                        <img src="assets/img/avatar-5.png" alt="image" class="card__img">
+                        <div class="card__shadow"></div>
+                    </div>
+                    <div class="card__data">
+                        <h3 class="card__name">Mushroom</h3>
+                        <p class="card__description">
+                            Homo Sapiens <br> 0.8 - 1.0
+                        </p>
+                    </div>
+                </article>
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next">
+                <i class="ri-arrow-right-s-line"></i>
+            </div>
+            <div class="swiper-button-prev">
+                <i class="ri-arrow-left-s-line"></i>
+            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <div class="org">
+        <a href="custom.html" class="txt" id="upload"">
+            <h3>Custom Optimize</h3>
+        </a>
+        <a href="optimize.html"  class="txt"">
+            <h3>Default Optimize</h3>
+        </a>
+    </div>
+    </div>
+
+
+    <!-- Wave   
+
+    <section>
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+    </section>
+
+    -->
+    
+
+    <!-- Compiled and minified JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                var preloader = document.getElementById('preloader');
+                if (preloader) {
+                    preloader.style.display = 'none';
+                }
+            }, 5000);
+        });
+    </script>
+
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+    <!--=============== SWIPER JS ===============-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
