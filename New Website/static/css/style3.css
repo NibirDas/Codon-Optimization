@@ -57,11 +57,21 @@ body{
 .back{
     margin-top: 50px;
 }
+
+.res{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Set the height to 100% of the viewport height */
+}
 .res p{
+    align-items: center;
+    justify-content: center;
     background-color: #E3D87E;
     border: #E3D87E solid;
     color: black;
     border-radius: 50px;
-    width: auto;
+    width: 400px;
     padding: 10px;
 }
+

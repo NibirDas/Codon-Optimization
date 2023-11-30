@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-----<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/card.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- GOOGKE FONTS -->
@@ -16,19 +17,12 @@
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
 
-    <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/card.css">
-
-
     <title>CrossCAI</title>
 </head>
 <body>
     <div id="particles-js"></div>
     <div id="preloader">
-        <img src="preloader.gif" alt="Preloader">
+        <img src="img/preloader.gif" alt="Preloader">
     </div>
     <nav class="navbar">
         <a href="index.html""><i class='bx bxs-home'></i></a>
@@ -40,7 +34,7 @@
                 <div class="swiper-wrapper">
                     <article class="card__article swiper-slide">
                     <div class="card__image">
-                        <img src="assets/img/avatar-1.png" alt="image" class="card__img">
+                        <img src="img/avatar-1.png" alt="image" class="card__img">
                         <div class="card__shadow"></div>
                     </div>
                     <div class="card__data">
@@ -52,7 +46,7 @@
                 </article>
                 <article class="card__article swiper-slide">
                     <div class="card__image">
-                        <img src="assets/img/avatar-4.png" alt="image" class="card__img">
+                        <img src="img/avatar-4.png" alt="image" class="card__img">
                         <div class="card__shadow"></div>
                     </div>      
                     <div class="card__data">
@@ -64,7 +58,7 @@
                 </article>      
                 <article class="card__article swiper-slide">
                     <div class="card__image">
-                        <img src="assets/img/avatar-3.png" alt="image" class="card__img">
+                        <img src="img/avatar-3.png" alt="image" class="card__img">
                         <div class="card__shadow"></div>
                     </div>
                     <div class="card__data">
@@ -76,7 +70,7 @@
                 </article>
                 <article class="card__article swiper-slide">
                     <div class="card__image">
-                        <img src="assets/img/avatar-4.png" alt="image" class="card__img">
+                        <img src="img/avatar-4.png" alt="image" class="card__img">
                         <div class="card__shadow"></div>
                     </div>
                     <div class="card__data">
@@ -89,7 +83,7 @@
 
                 <article class="card__article swiper-slide">
                     <div class="card__image">
-                        <img src="assets/img/avatar-5.png" alt="image" class="card__img">
+                        <img src="img/avatar-5.png" alt="image" class="card__img">
                         <div class="card__shadow"></div>
                     </div>
                     <div class="card__data">
@@ -115,10 +109,10 @@
     </section>
 
     <div class="org">
-        <a href="custom.html" class="txt" id="upload"">
+        <a href="http://127.0.0.1:5010" target="_blank" class="txt" id="upload"">
             <h3>Custom Optimize</h3>
         </a>
-        <a href="optimize.html"  class="txt"">
+        <a href="http://127.0.0.1:5011" target="_blank"  class="txt"">
             <h3>Default Optimize</h3>
         </a>
     </div>
@@ -149,12 +143,11 @@
         });
     </script>
 
-    <script src="particles.js"></script>
-    <script src="app.js"></script>
+    <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <!--=============== SWIPER JS ===============-->
-    <script src="assets/js/swiper-bundle.min.js"></script>
-
+    <script src="{{ url_for('static', filename='js/swiper-bundle.min.js') }}"></script>
     <!--=============== MAIN JS ===============-->
-    <script src="assets/js/main.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
